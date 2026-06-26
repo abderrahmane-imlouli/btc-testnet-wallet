@@ -1,7 +1,12 @@
 #  Bitcoin Testnet Wallet Toolkit
 
-A lightweight, dependency-minimal Bitcoin **testnet** toolkit written in pure Python.  
-Supports **Legacy P2PKH** (`m/n...`) and **Native SegWit P2WPKH** (`tb1...`) addresses — wallet generation, address validation, QR codes, and transaction broadcasting.
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![Bitcoin](https://img.shields.io/badge/Bitcoin-Testnet-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Status](https://img.shields.io/badge/Status-Educational-yellow.svg)
+![Blockchain](https://img.shields.io/badge/Blockchain-Low%20Level-critical.svg)
+
+A lightweight, dependency-minimal Bitcoin Testnet toolkit written in pure Python. It implements core Bitcoin functionality from scratch, including ECDSA (secp256k1) key generation, WIF encoding/decoding, Legacy (P2PKH) and Native SegWit (P2WPKH) address generation, address validation, QR code generation, UTXO management, raw transaction construction, BIP143 transaction signing, and transaction broadcasting via the Blockstream Testnet API—without relying on high-level Bitcoin libraries
 
 > ⚠️ **Testnet only.** This tool is configured for Bitcoin Testnet (`tb`, `\xef`, `\x6f`).  
 > Do **not** use it with real mainnet funds.
@@ -60,7 +65,9 @@ public_key      : 03ab...44ef
 legacy_address  : mxYz...3kQp
 segwit_address  : tb1q...7rwm
 ```
+**Real example** :
 
+![gen output](examples/gen.png)
 ---
 
 ### 2. Validate an Address
@@ -82,7 +89,9 @@ python wallet_tool.py validate tb1qw508d6qejxtdg4y5r3zarvary0c5xw7kxpjzsx
 python wallet_tool.py validate 1FakeMaiNnEtaDdReSsXxXxXx
 # → INVALID
 ```
+**Real example** :
 
+![gen output](examples/validate.png)
 ---
 
 ### 3. Generate a QR Code
@@ -101,7 +110,9 @@ python wallet_generator.py qr tb1q...7rwm
 # QR saved to a custom file
 python wallet_generator.py qr tb1q...7rwm --out my_address_qr.png
 ```
+**Real example** :
 
+![gen output](examples/qr_saved.png)
 ---
 
 ### 4. Send a Transaction
@@ -134,6 +145,9 @@ RAW TX HEX:
 BROADCAST STATUS: 200
 RESPONSE: 3a9f1c...txid...
 ```
+**Real example** :
+
+![gen output](examples/broadcast.png)
 
 > 💡 Default fee is **500 satoshis**. Change can be modified inside `send()` in the source.
 
@@ -166,7 +180,6 @@ No API key required.
 
 You need testnet coins to test sending. Use any of these faucets:
 
-- https://testnet-faucet.mempool.co
 - https://coinfaucet.eu/en/btc-testnet/
 - https://bitcoinfaucet.uo1.net/
 
