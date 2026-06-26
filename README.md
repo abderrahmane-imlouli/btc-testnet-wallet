@@ -31,8 +31,8 @@ btc-testnet-wallet/
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/abderrahmane-imlouli/btc-testnet-wallet.git
-cd btc-testnet-wallet
+git clone https://github.com/abderrahmane-imlouli/BTC-Testnet-Wallet.git
+cd BTC-Testnet-Wallet
 pip install -r requirements.txt
 ```
 
